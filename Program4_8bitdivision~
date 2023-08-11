@@ -1,0 +1,24 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+LDA 4201
+MOV B,A
+LDA 4200
+MVI C,00H
+AGAIN: CMP B
+JC STORE
+SUB B
+INR C
+JMP AGAIN
+STORE: STA 4202
+MOV A,C
+STA 4203
+
+hlt
